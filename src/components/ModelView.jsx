@@ -31,7 +31,7 @@ const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, si
       /> 
 
       <group ref={groupRef} name={`${index === 1} ? 'small' : 'large`} position={[0, 0 ,0]}>
-        <Suspense fallback={<Html><div>Loding..</div></Html>}>
+        <Suspense fallback={<Html><div>Loding...</div></Html>}>
           <IPhone 
             scale={index === 1 ? [15, 15, 15] : [17, 17, 17]}
             item={item}
