@@ -21,18 +21,18 @@ const VideoCarousel = () => {
     isPlaying: false,
   });
 
-  const [loadedData, setLoadedData] = useState([]); console.log(setLoadedData);
+  const [loadedData, setLoadedData] = useState([]);
   const { isEnd, isLastVideo, startPlay, videoId, isPlaying } = video;
 
   useGSAP(() => {
-    //slider animation to move the video out of the screen and bring the next video in
+    // slider animation to move the video out of the screen and bring the next video in
     gsap.to("#slider", {
       transform: `translateX(${-100 * videoId}%)`,
       duration: 2,
       ease: "power2.inOut", // show visualizer https://gsap.com/docs/v3/Eases
     });
 
-    //video animation to play the video when it is in the view
+    // video animation to play the video when it is in the view
     gsap.to("#video", {
       scrollTrigger: {
         trigger: "#video",
@@ -153,7 +153,7 @@ const VideoCarousel = () => {
     }
   };
 
-  const handleLoadedMetaData = (i, e) => setLoadedData((pre) =>  [...pre, e]);
+  const handleLoadedMetaData = (i, e) => setLoadedData((pre) => [...pre, e]);
 
   return (
     <>
@@ -164,7 +164,7 @@ const VideoCarousel = () => {
               <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
                 <video
                   id="video"
-                  playsInline={true}
+                  playsInline='true'
                   className={`${
                     list.id === 2 && "translate-x-44"
                   } pointer-events-none`}
